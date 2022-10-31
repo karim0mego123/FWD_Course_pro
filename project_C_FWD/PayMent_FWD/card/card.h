@@ -57,7 +57,7 @@ EN_cardError_t getCardExpiryDate(ST_cardData_t *cardData);
 
 EN_cardError_t getCardPAN(ST_cardData_t *cardData);
 /************************************************************
- * Name : getCardPAN(API)							*
+ * Name : getCardPAN(API)									*
  * Param(in) : NA											*
  * Param(out) : CardData									*
  * Param(in/out) : NA										*

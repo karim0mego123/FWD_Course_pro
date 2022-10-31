@@ -31,7 +31,7 @@ typedef enum EN_terminalError_t
 
 EN_terminalError_t getTransactionDate(ST_terminalData_t *termData);
 /************************************************************
- * Name : not a getTransactionDate (API)							*
+ * Name : not a getTransactionDate (API)					*
  * Param(in) : NA											*
  * Param(out) : CardData									*
  * Param(in/out) : NA										*
@@ -41,7 +41,7 @@ EN_terminalError_t getTransactionDate(ST_terminalData_t *termData);
  ***********************************************************/
 EN_terminalError_t isCardExpired(ST_cardData_t cardData, ST_terminalData_t termData);
 /************************************************************
- * Name : not a primitive datatype(API)							*
+ * Name : not a primitive datatype(API)						*
  * Param(in) : NA											*
  * Param(out) : CardData									*
  * Param(in/out) : NA										*
@@ -63,7 +63,7 @@ EN_terminalError_t getTransactionAmount(ST_terminalData_t *termData);
 
 EN_terminalError_t isBelowMaxAmount(ST_terminalData_t *termData);
 /************************************************************
- * Name : isBelowMaxAmount(API)							*
+ * Name : isBelowMaxAmount(API)								*
  * Param(in) : NA											*
  * Param(out) : CardData									*
  * Param(in/out) : NA										*
@@ -74,7 +74,7 @@ EN_terminalError_t isBelowMaxAmount(ST_terminalData_t *termData);
 
 EN_terminalError_t setMaxAmount(ST_terminalData_t *termData);
 /************************************************************
- * Name : setMaxAmount(API)							*
+ * Name : setMaxAmount(API)									*
  * Param(in) : NA											*
  * Param(out) : CardData									*
  * Param(in/out) : NA										*
@@ -85,7 +85,7 @@ EN_terminalError_t setMaxAmount(ST_terminalData_t *termData);
 
 void getTransactionDateTest(void);
 /************************************************************
- * Name : getTransactionDateTest(API)							*
+ * Name : getTransactionDateTest(API)						*
  * Param(in) : NA											*
  * Param(out) : CardData									*
  * Param(in/out) : NA										*
@@ -96,7 +96,7 @@ void getTransactionDateTest(void);
 
 bool format_true( string TestData );
 /************************************************************
- * Name : format_true(API)							*
+ * Name : format_true(API)									*
  * Param(in) : NA											*
  * Param(out) : CardData									*
  * Param(in/out) : NA										*
@@ -116,7 +116,7 @@ void isCardExpriedTest(void);
  ***********************************************************/
 void getTransactionAmountTest(void);
 /************************************************************
- * Name : getTransactionAmountTest(API)							*
+ * Name : getTransactionAmountTest(API)						*
  * Param(in) : NA											*
  * Param(out) : CardData									*
  * Param(in/out) : NA										*
@@ -126,7 +126,7 @@ void getTransactionAmountTest(void);
  ***********************************************************/
 void setMaxAmountTest(void);
 /************************************************************
- * Name : setMaxAmountTest(API)							*
+ * Name : setMaxAmountTest(API)								*
  * Param(in) : NA											*
  * Param(out) : CardData									*
  * Param(in/out) : NA										*

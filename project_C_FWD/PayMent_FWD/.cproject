@@ -29,11 +29,11 @@
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.mingw.exe.debug.option.optimization.level.1496308553" name="Optimization Level" superClass="gnu.c.compiler.mingw.exe.debug.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
 								<option id="gnu.c.compiler.mingw.exe.debug.option.debugging.level.1205458117" name="Debug Level" superClass="gnu.c.compiler.mingw.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.133338058" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="C:\Users\karim\Desktop\PayMent_FWD\app"/>
-									<listOptionValue builtIn="false" value="C:\Users\karim\Desktop\PayMent_FWD\server"/>
-									<listOptionValue builtIn="false" value="C:\Users\karim\Desktop\PayMent_FWD\card"/>
-									<listOptionValue builtIn="false" value="C:\Users\karim\Desktop\PayMent_FWD\terminal"/>
-									<listOptionValue builtIn="false" value="C:\Users\karim\Desktop\PayMent_FWD"/>
+									<listOptionValue builtIn="false" value="C:\Users\karim\Desktop\FWD_Course_pro\project_C_FWD\PayMent_FWD\card"/>
+									<listOptionValue builtIn="false" value="C:\Users\karim\Desktop\FWD_Course_pro\project_C_FWD\PayMent_FWD\app"/>
+									<listOptionValue builtIn="false" value="C:\Users\karim\Desktop\FWD_Course_pro\project_C_FWD\PayMent_FWD"/>
+									<listOptionValue builtIn="false" value="C:\Users\karim\Desktop\FWD_Course_pro\project_C_FWD\PayMent_FWD\terminal"/>
+									<listOptionValue builtIn="false" value="C:\Users\karim\Desktop\FWD_Course_pro\project_C_FWD\PayMent_FWD\server"/>
 								</option>
 								<option id="gnu.c.compiler.option.warnings.allwarn.1230192843" name="All warnings (-Wall)" superClass="gnu.c.compiler.option.warnings.allwarn" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.878050252" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
