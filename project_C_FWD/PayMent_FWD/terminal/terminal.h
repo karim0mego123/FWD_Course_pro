@@ -94,7 +94,7 @@ void getTransactionDateTest(void);
  * Last Modification : 28/10                                *
  ***********************************************************/
 
-bool format_true( string TestData );
+bool format_true( string TestData , uint8_t Length_StrString );
 /************************************************************
  * Name : format_true(API)									*
  * Param(in) : NA											*

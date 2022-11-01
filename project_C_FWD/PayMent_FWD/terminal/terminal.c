@@ -2,22 +2,29 @@
 string TransactionData[MaxTransactionDate]  ;
 EN_terminalError_t getTransactionDate(ST_terminalData_t *termData)
 {
-
+	EN_terminalError_t Return_Status = TERMINAL_OK ;
+	uint8_t Loc_Strsize = 0 ;
 	time_t date = time(NULL);
 	struct tm tm = *localtime(&date);
 	string year = (string)malloc(4);
 	string mon = (string)malloc(2);
 	string day = (string)malloc(2);
-	sprintf(year, "%d", tm.tm_year + 1900);
-	sprintf(mon, "%d", tm.tm_mon + 1);
-	sprintf(day, "%d", tm.tm_mday);
+	sprintf(year, "%0.4d", tm.tm_year + 1900);
+	sprintf(mon, "%0.2d", tm.tm_mon + 1);
+	sprintf(day, "%0.2d", tm.tm_mday);
 	strcat((string)termData->transactionDate, day);
 	strcat((string)termData->transactionDate, "/");
 	strcat((string)termData->transactionDate, mon);
 	strcat((string)termData->transactionDate, "/");
 	strcat((string)termData->transactionDate, year);
+	Loc_Strsize = strlen(termData->transactionDate) ;
+	if ( !format_true(termData->transactionDate , Loc_Strsize ) )
+	{
+		printf("%s\n",termData->transactionDate) ;
+		Return_Status = WRONG_DATE ;
+	}
 	strcpy ((string)TransactionData,(string)termData->transactionDate) ;
-	return CARD_OK ;
+	return Return_Status ;
 }
 
 EN_terminalError_t isCardExpired(ST_cardData_t cardData, ST_terminalData_t termData)
@@ -107,7 +114,7 @@ void getTransactionDateTest(void)		/*	Test transation data	*/
 			printf("test case %d false\n",Loc_Count) ;
 			continue ;
 		}
-		else if ( format_true ( (string)Loc_strDataTest[Loc_Count] ) == false )
+		else if ( format_true ( (string)Loc_strDataTest[Loc_Count] ,strlen((string)Loc_strDataTest) ) == false )
 		{
 			printf("test case %d false\n",Loc_Count) ;
 			continue ;
@@ -119,16 +126,30 @@ void getTransactionDateTest(void)		/*	Test transation data	*/
 	}
 }
 
-bool format_true( string TestData )
+bool format_true( string TestData , uint8_t Length_StrString )
 {
 	uint8_t Loc_count = 0 ;
 	EN_terminalError_t Return_Status = true ;
-	for ( Loc_count = 0 ; Loc_count<10 ; Loc_count++)
+	for ( Loc_count = 0 ; Loc_count < Length_StrString ; Loc_count++)
 	{
-		if (!isalnum(TestData[Loc_count]))
+		if ( Loc_count == 2 || Loc_count == 5 )
 		{
-			Return_Status = false ;
-			break ;
+			if ( TestData[2] != '/' || TestData[5] != '/' )
+			{
+				Return_Status = false ;
+			}
+			else
+			{
+				continue ;
+			}
+		}
+		else
+		{
+			if ( TestData[Loc_count] < 48 || TestData[Loc_count] > 57 )
+			{
+				Return_Status = false ;
+				break ;
+			}
 		}
 	}
 	return Return_Status;

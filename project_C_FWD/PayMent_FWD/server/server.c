@@ -18,11 +18,10 @@ ST_accountsDB_t DB_Stolen[MaxAcountsDateBase] = {
 
 uint8_t Actual_numAccounts_DataBase = 10u ;
 uint8_t NumCurrentAccount = 0 ;
-uint8_t NUM_Transactions  = 2 ;
+uint8_t NUM_Transactions  = 0 ;
 uint32_t transactionSequenceNumber = 0 ;
 
-ST_transaction_t TrsnsactionsDataBase[MaxAcountsDateBase] = {{{"karim ayman abdel latef", "8921739471289491", "09/23"}, {3423.0f, 234234.0f, "30/10/2022"},TERMINAL_OK,1},
-		{{"ahmed ayman abdel latef" , "9018420830803280", "10/24"}, {2323.0f, 23522.0f, "28/10/2022"} ,TERMINAL_OK,0} };
+ST_transaction_t TrsnsactionsDataBase[MaxAcountsDateBase]   ;
 
 EN_transState_t recieveTransactionData(ST_transaction_t *transData)
 {
@@ -30,7 +29,10 @@ EN_transState_t recieveTransactionData(ST_transaction_t *transData)
 
 	getCardHolderName(&(transData->cardHolderData)) ;
 	getCardExpiryDate(&(transData->cardHolderData)) ;
-	getTransactionDate(&(transData->terminalData)) ;
+	if ( getTransactionDate(&(transData->terminalData)) == WRONG_DATE )
+	{
+		printf("Wrong Data\n") ;
+	}
 	getCardPAN		 (&(transData->cardHolderData)) ;
 	setMaxAmount(&(transData->terminalData)) ;
 	getTransactionAmount(&(transData->terminalData)) ;

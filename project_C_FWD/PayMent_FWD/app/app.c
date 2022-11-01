@@ -20,7 +20,7 @@ void appStart(void)
 		break ;
 	case APPROVED :
 		printf("APPROVED\n");
-		display(&transaction);
+		//display(&transaction);
 		break ;
 	case BLOCKED_ACCOUNT :
 		printf("blocked account\n") ;
