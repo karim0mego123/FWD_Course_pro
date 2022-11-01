@@ -32,8 +32,8 @@ EN_transState_t recieveTransactionData(ST_transaction_t *transData)
 	getCardExpiryDate(&(transData->cardHolderData)) ;
 	getTransactionDate(&(transData->terminalData)) ;
 	getCardPAN		 (&(transData->cardHolderData)) ;
-	getTransactionAmount(&(transData->terminalData)) ;
 	setMaxAmount(&(transData->terminalData)) ;
+	getTransactionAmount(&(transData->terminalData)) ;
 
 	if ( isCardExpired(transData->cardHolderData,transData->terminalData)  == EXPIRED_CARD )
 	{
@@ -121,6 +121,7 @@ EN_serverError_t isAmountAvailable(ST_terminalData_t *termData)
 EN_serverError_t saveTransaction(ST_transaction_t *transData)
 {
 	EN_serverError_t Return_Status = SERVER_OK ;
+	uint32_t Loc_Test , Loc_count = 0 ;
 	if (NUM_Transactions > MaxNumTransaction)
 	{
 		Return_Status = SAVING_FAILED ;
@@ -145,8 +146,19 @@ EN_serverError_t saveTransaction(ST_transaction_t *transData)
 	/* save transaction's informations		*/
 	TrsnsactionsDataBase[NUM_Transactions].transactionSequenceNumber = NUM_Transactions;
 	TrsnsactionsDataBase[NUM_Transactions].transState = transData->transState;
-	/* increament for the next transaction	*/
+	printf("enter 1 to git all transactions\n") ;
+	CLEAR_BUFFER() ;
+	scanf("%d",&Loc_Test) ;
 	NUM_Transactions++;
+	if ( Loc_Test == 1)
+	{
+		for (Loc_count = 0 ; Loc_count< NUM_Transactions ; Loc_count++ )
+		{
+			display(TrsnsactionsDataBase[Loc_count]) ;
+		}
+	}
+
+	/* increament for the next transaction	*/
 	return Return_Status ;
 
 }
@@ -159,7 +171,8 @@ EN_serverError_t getTransaction(uint32_t transactionSequenceNumber, ST_transacti
 		Return_Status = TRANSACTION_NOT_FOUND ;
 	}
 
-	/* get card informations				*/
+	/* get card informations
+	 */
 	strcpy((string)transData->cardHolderData.cardHolderName, (string)TrsnsactionsDataBase[transactionSequenceNumber].cardHolderData.cardHolderName);
 	strcpy((string)transData->cardHolderData.primaryAccountNumber, (string)TrsnsactionsDataBase[transactionSequenceNumber].cardHolderData.primaryAccountNumber);
 	strcpy((string)transData->cardHolderData.cardExpirationDate, (string)TrsnsactionsDataBase[transactionSequenceNumber].cardHolderData.cardExpirationDate);
@@ -172,5 +185,7 @@ EN_serverError_t getTransaction(uint32_t transactionSequenceNumber, ST_transacti
 	/* get transaction informations		*/
 	transData->transactionSequenceNumber = transactionSequenceNumber;
 	transData->transState = TrsnsactionsDataBase[transactionSequenceNumber].transState;
+
+
 	return Return_Status ;
 }

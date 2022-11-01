@@ -58,6 +58,7 @@ EN_terminalError_t getTransactionAmount(ST_terminalData_t *termData)
 		scanf("%f",&Loc_Transaction_Amount) ;
 		if ( Loc_Transaction_Amount <= 0 )
 		{
+			printf("you entered wrong money \n") ;
 			Return_Status = INVALID_AMOUNT ;
 		}
 		else
@@ -72,9 +73,10 @@ EN_terminalError_t getTransactionAmount(ST_terminalData_t *termData)
 EN_terminalError_t setMaxAmount(ST_terminalData_t *termData)
 {
 	EN_terminalError_t Return_Status = TERMINAL_OK ;
-	if ( Max_amount < 0 )
+	if ( Max_amount <= 0 )
 	{
 		Return_Status =  INVALID_MAX_AMOUNT  ;
+		printf("max_amount less or equal than zero\n") ;
 	}
 	else
 	{
