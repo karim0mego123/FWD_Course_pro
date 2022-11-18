@@ -17,7 +17,7 @@ void TIMER_init(void)
 void TIMER_start(uint16_t preScalar, uint32_t number_of_overflow)
 {
 	uint32_t overflowCounter = 0;
-	switch (preScalar)
+  	switch (preScalar)
 	{
 		case 1:
 		TCCR0_BASE |= (1 << 0); // set pin0

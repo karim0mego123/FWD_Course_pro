@@ -56,7 +56,7 @@ void App_start(void)
 			{
 				continue;
 			}
-			// 3. blink cars' Yellow LED and turn on the pedestrians' Red LED
+			// 3. blink cars' Yellow LED and turn on the pedestrians' Red LED 
 			LED_OFF(LED_C_RED_PORT, LED_C_RED_PIN);
 			LED_OFF(LED_P_GREEN_PORT, LED_P_GREEN_PIN);
 			LED_OFF(LED_C_GREEN_PORT, LED_C_GREEN_PIN);

@@ -48,10 +48,15 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../Application/App.c \
 ../HAL/BUTTON_Driver/BUTTON.c \
+../HAL/BUTTON_Driver/test.c \
 ../HAL/LED_Driver/LED.c \
+../HAL/LED_Driver/test.c \
 ../main.c \
 ../MCAL/DIO_Driver/DIO.c \
+../MCAL/DIO_Driver/test.c \
 ../MCAL/Interrupt_Driver/Interrupt.c \
+../MCAL/Interrupt_Driver/test.c \
+../MCAL/Timer_Driver/test.c \
 ../MCAL/Timer_Driver/Timer.c
 
 
@@ -64,37 +69,57 @@ ASM_SRCS +=
 OBJS +=  \
 Application/App.o \
 HAL/BUTTON_Driver/BUTTON.o \
+HAL/BUTTON_Driver/test.o \
 HAL/LED_Driver/LED.o \
+HAL/LED_Driver/test.o \
 main.o \
 MCAL/DIO_Driver/DIO.o \
+MCAL/DIO_Driver/test.o \
 MCAL/Interrupt_Driver/Interrupt.o \
+MCAL/Interrupt_Driver/test.o \
+MCAL/Timer_Driver/test.o \
 MCAL/Timer_Driver/Timer.o
 
 OBJS_AS_ARGS +=  \
 Application/App.o \
 HAL/BUTTON_Driver/BUTTON.o \
+HAL/BUTTON_Driver/test.o \
 HAL/LED_Driver/LED.o \
+HAL/LED_Driver/test.o \
 main.o \
 MCAL/DIO_Driver/DIO.o \
+MCAL/DIO_Driver/test.o \
 MCAL/Interrupt_Driver/Interrupt.o \
+MCAL/Interrupt_Driver/test.o \
+MCAL/Timer_Driver/test.o \
 MCAL/Timer_Driver/Timer.o
 
 C_DEPS +=  \
 Application/App.d \
 HAL/BUTTON_Driver/BUTTON.d \
+HAL/BUTTON_Driver/test.d \
 HAL/LED_Driver/LED.d \
+HAL/LED_Driver/test.d \
 main.d \
 MCAL/DIO_Driver/DIO.d \
+MCAL/DIO_Driver/test.d \
 MCAL/Interrupt_Driver/Interrupt.d \
+MCAL/Interrupt_Driver/test.d \
+MCAL/Timer_Driver/test.d \
 MCAL/Timer_Driver/Timer.d
 
 C_DEPS_AS_ARGS +=  \
 Application/App.d \
 HAL/BUTTON_Driver/BUTTON.d \
+HAL/BUTTON_Driver/test.d \
 HAL/LED_Driver/LED.d \
+HAL/LED_Driver/test.d \
 main.d \
 MCAL/DIO_Driver/DIO.d \
+MCAL/DIO_Driver/test.d \
 MCAL/Interrupt_Driver/Interrupt.d \
+MCAL/Interrupt_Driver/test.d \
+MCAL/Timer_Driver/test.d \
 MCAL/Timer_Driver/Timer.d
 
 OUTPUT_FILE_PATH +=FWD_Traffic_Light_Control.elf
@@ -125,7 +150,21 @@ HAL/BUTTON_Driver/BUTTON.o: ../HAL/BUTTON_Driver/BUTTON.c
 	@echo Finished building: $<
 	
 
+HAL/BUTTON_Driver/test.o: ../HAL/BUTTON_Driver/test.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 HAL/LED_Driver/LED.o: ../HAL/LED_Driver/LED.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+HAL/LED_Driver/test.o: ../HAL/LED_Driver/test.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -146,7 +185,28 @@ MCAL/DIO_Driver/DIO.o: ../MCAL/DIO_Driver/DIO.c
 	@echo Finished building: $<
 	
 
+MCAL/DIO_Driver/test.o: ../MCAL/DIO_Driver/test.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 MCAL/Interrupt_Driver/Interrupt.o: ../MCAL/Interrupt_Driver/Interrupt.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/Interrupt_Driver/test.o: ../MCAL/Interrupt_Driver/test.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/Timer_Driver/test.o: ../MCAL/Timer_Driver/test.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

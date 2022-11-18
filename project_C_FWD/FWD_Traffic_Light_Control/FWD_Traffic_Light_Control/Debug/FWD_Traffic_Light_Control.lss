@@ -19,15 +19,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   7 .debug_abbrev 00000909  00000000  00000000  0000204d  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000c27  00000000  00000000  00002956  2**0
+  8 .debug_line   00000c19  00000000  00000000  00002956  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  000002d8  00000000  00000000  00003580  2**2
+  9 .debug_frame  000002d8  00000000  00000000  00003570  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    000005f6  00000000  00000000  00003858  2**0
+ 10 .debug_str    00000603  00000000  00000000  00003848  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    0000085b  00000000  00000000  00003e4e  2**0
+ 11 .debug_loc    0000085b  00000000  00000000  00003e4b  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000108  00000000  00000000  000046a9  2**0
+ 12 .debug_ranges 00000108  00000000  00000000  000046a6  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -734,7 +734,7 @@ void App_start(void)
 			{
 				continue;
 			}
-			// 3. blink cars' Yellow LED and turn on the pedestrians' Red LED
+			// 3. blink cars' Yellow LED and turn on the pedestrians' Red LED 
 			LED_OFF(LED_C_RED_PORT, LED_C_RED_PIN);
  3fe:	60 e0       	ldi	r22, 0x00	; 0
  400:	81 e4       	ldi	r24, 0x41	; 65
@@ -854,7 +854,6 @@ int main(void)
 	App_start();
  48e:	0e 94 e3 01 	call	0x3c6	; 0x3c6 <App_start>
 	
-}
  492:	80 e0       	ldi	r24, 0x00	; 0
  494:	90 e0       	ldi	r25, 0x00	; 0
  496:	08 95       	ret
@@ -1440,7 +1439,7 @@ void TIMER_start(uint16_t preScalar, uint32_t number_of_overflow)
  7c4:	0f 93       	push	r16
  7c6:	1f 93       	push	r17
 	uint32_t overflowCounter = 0;
-	switch (preScalar)
+  	switch (preScalar)
  7c8:	80 34       	cpi	r24, 0x40	; 64
  7ca:	91 05       	cpc	r25, r1
  7cc:	b9 f0       	breq	.+46     	; 0x7fc <TIMER_start+0x38>

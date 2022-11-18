@@ -20,10 +20,10 @@
     <OverrideVtor>false</OverrideVtor>
     <CacheFlash>true</CacheFlash>
     <ProgFlashFromRam>true</ProgFlashFromRam>
-    <RamSnippetAddress />
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
     <UncachedRange />
     <preserveEEPROM>true</preserveEEPROM>
-    <OverrideVtorValue />
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
     <BootSegment>2</BootSegment>
     <ResetRule>0</ResetRule>
     <eraseonlaunchrule>0</eraseonlaunchrule>
@@ -40,6 +40,19 @@
         </dependencies>
       </framework-data>
     </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.simulator</avrtool>
+    <avrtoolserialnumber />
+    <avrdeviceexpectedsignature>0x1E9502</avrdeviceexpectedsignature>
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolOptions xmlns="">
+        <InterfaceProperties>
+        </InterfaceProperties>
+      </ToolOptions>
+      <ToolType xmlns="">com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <ToolName xmlns="">Simulator</ToolName>
+    </com_atmel_avrdbg_tool_simulator>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -132,10 +145,16 @@
     <Compile Include="HAL\BUTTON_Driver\BUTTON.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\BUTTON_Driver\test.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\LED_Driver\LED.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HAL\LED_Driver\LED.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\LED_Driver\test.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">
@@ -147,10 +166,19 @@
     <Compile Include="MCAL\DIO_Driver\DIO.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\DIO_Driver\test.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MCAL\Interrupt_Driver\Interrupt.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MCAL\Interrupt_Driver\Interrupt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\Interrupt_Driver\test.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\Timer_Driver\test.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MCAL\Timer_Driver\Timer.c">

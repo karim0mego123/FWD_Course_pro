@@ -9,7 +9,7 @@
 #ifndef INTERRUPT_H_
 #define INTERRUPT_H_
 
-#include "..\DIO_Driver\DIO.h"
+#include "..\..\Utilities\Registers.h"
 
 #define EXT_INT_0 __vector_1
 // External interrupt request 1

@@ -26,18 +26,52 @@ Discarded input sections
  .bss           0x00000000        0x0 HAL/BUTTON_Driver/BUTTON.o
  .text.Button_get_state
                 0x00000000        0x6 HAL/BUTTON_Driver/BUTTON.o
+ .text          0x00000000        0x0 HAL/BUTTON_Driver/test.o
+ .data          0x00000000        0x0 HAL/BUTTON_Driver/test.o
+ .bss           0x00000000        0x0 HAL/BUTTON_Driver/test.o
+ .debug_line    0x00000000        0x0 HAL/BUTTON_Driver/test.o
+ .debug_str     0x00000000      0x135 HAL/BUTTON_Driver/test.o
+ .comment       0x00000000       0x31 HAL/BUTTON_Driver/test.o
  .text          0x00000000        0x0 HAL/LED_Driver/LED.o
  .data          0x00000000        0x0 HAL/LED_Driver/LED.o
  .bss           0x00000000        0x0 HAL/LED_Driver/LED.o
+ .text          0x00000000        0x0 HAL/LED_Driver/test.o
+ .data          0x00000000        0x0 HAL/LED_Driver/test.o
+ .bss           0x00000000        0x0 HAL/LED_Driver/test.o
+ .debug_line    0x00000000        0x0 HAL/LED_Driver/test.o
+ .debug_str     0x00000000      0x132 HAL/LED_Driver/test.o
+ .comment       0x00000000       0x31 HAL/LED_Driver/test.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
  .text          0x00000000        0x0 MCAL/DIO_Driver/DIO.o
  .data          0x00000000        0x0 MCAL/DIO_Driver/DIO.o
  .bss           0x00000000        0x0 MCAL/DIO_Driver/DIO.o
+ .text          0x00000000        0x0 MCAL/DIO_Driver/test.o
+ .data          0x00000000        0x0 MCAL/DIO_Driver/test.o
+ .bss           0x00000000        0x0 MCAL/DIO_Driver/test.o
+ .debug_info    0x00000000       0x41 MCAL/DIO_Driver/test.o
+ .debug_abbrev  0x00000000       0x1b MCAL/DIO_Driver/test.o
+ .debug_aranges
+                0x00000000       0x18 MCAL/DIO_Driver/test.o
+ .debug_line    0x00000000       0x1a MCAL/DIO_Driver/test.o
+ .debug_str     0x00000000      0x17b MCAL/DIO_Driver/test.o
+ .comment       0x00000000       0x31 MCAL/DIO_Driver/test.o
  .text          0x00000000        0x0 MCAL/Interrupt_Driver/Interrupt.o
  .data          0x00000000        0x0 MCAL/Interrupt_Driver/Interrupt.o
  .bss           0x00000000        0x0 MCAL/Interrupt_Driver/Interrupt.o
+ .text          0x00000000        0x0 MCAL/Interrupt_Driver/test.o
+ .data          0x00000000        0x0 MCAL/Interrupt_Driver/test.o
+ .bss           0x00000000        0x0 MCAL/Interrupt_Driver/test.o
+ .debug_line    0x00000000        0x0 MCAL/Interrupt_Driver/test.o
+ .debug_str     0x00000000      0x139 MCAL/Interrupt_Driver/test.o
+ .comment       0x00000000       0x31 MCAL/Interrupt_Driver/test.o
+ .text          0x00000000        0x0 MCAL/Timer_Driver/test.o
+ .data          0x00000000        0x0 MCAL/Timer_Driver/test.o
+ .bss           0x00000000        0x0 MCAL/Timer_Driver/test.o
+ .debug_line    0x00000000        0x0 MCAL/Timer_Driver/test.o
+ .debug_str     0x00000000      0x135 MCAL/Timer_Driver/test.o
+ .comment       0x00000000       0x31 MCAL/Timer_Driver/test.o
  .text          0x00000000        0x0 MCAL/Timer_Driver/Timer.o
  .data          0x00000000        0x0 MCAL/Timer_Driver/Timer.o
  .bss           0x00000000        0x0 MCAL/Timer_Driver/Timer.o
@@ -121,10 +155,15 @@ Linker script and memory map
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32a/avr5/crtatmega32a.o
 LOAD Application/App.o
 LOAD HAL/BUTTON_Driver/BUTTON.o
+LOAD HAL/BUTTON_Driver/test.o
 LOAD HAL/LED_Driver/LED.o
+LOAD HAL/LED_Driver/test.o
 LOAD main.o
 LOAD MCAL/DIO_Driver/DIO.o
+LOAD MCAL/DIO_Driver/test.o
 LOAD MCAL/Interrupt_Driver/Interrupt.o
+LOAD MCAL/Interrupt_Driver/test.o
+LOAD MCAL/Timer_Driver/test.o
 LOAD MCAL/Timer_Driver/Timer.o
 START GROUP
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
@@ -563,7 +602,7 @@ END GROUP
  .debug_abbrev  0x000007fa       0x46 MCAL/Interrupt_Driver/Interrupt.o
  .debug_abbrev  0x00000840       0xc9 MCAL/Timer_Driver/Timer.o
 
-.debug_line     0x00000000      0xc27
+.debug_line     0x00000000      0xc19
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x116 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32a/avr5/crtatmega32a.o
  .debug_line    0x00000116      0x509 Application/App.o
@@ -571,8 +610,8 @@ END GROUP
  .debug_line    0x0000071c      0x101 HAL/LED_Driver/LED.o
  .debug_line    0x0000081d       0x65 main.o
  .debug_line    0x00000882      0x1d3 MCAL/DIO_Driver/DIO.o
- .debug_line    0x00000a55       0xa6 MCAL/Interrupt_Driver/Interrupt.o
- .debug_line    0x00000afb      0x12c MCAL/Timer_Driver/Timer.o
+ .debug_line    0x00000a55       0x98 MCAL/Interrupt_Driver/Interrupt.o
+ .debug_line    0x00000aed      0x12c MCAL/Timer_Driver/Timer.o
 
 .debug_frame    0x00000000      0x2d8
  *(.debug_frame)
@@ -584,23 +623,23 @@ END GROUP
  .debug_frame   0x00000254       0x24 MCAL/Interrupt_Driver/Interrupt.o
  .debug_frame   0x00000278       0x60 MCAL/Timer_Driver/Timer.o
 
-.debug_str      0x00000000      0x5f6
+.debug_str      0x00000000      0x603
  *(.debug_str)
  .debug_str     0x00000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32a/avr5/crtatmega32a.o
- .debug_str     0x00000196      0x30f Application/App.o
-                                0x31b (size before relaxing)
- .debug_str     0x000004a5       0x4d HAL/BUTTON_Driver/BUTTON.o
-                                0x1c4 (size before relaxing)
- .debug_str     0x000004f2       0x3c HAL/LED_Driver/LED.o
-                                0x1c4 (size before relaxing)
- .debug_str     0x0000052e       0x11 main.o
-                                0x178 (size before relaxing)
- .debug_str     0x0000053f       0x38 MCAL/DIO_Driver/DIO.o
-                                0x1c1 (size before relaxing)
- .debug_str     0x00000577       0x25 MCAL/Interrupt_Driver/Interrupt.o
-                                0x197 (size before relaxing)
- .debug_str     0x0000059c       0x5a MCAL/Timer_Driver/Timer.o
-                                0x1e3 (size before relaxing)
+ .debug_str     0x00000196      0x31c Application/App.o
+                                0x328 (size before relaxing)
+ .debug_str     0x000004b2       0x4d HAL/BUTTON_Driver/BUTTON.o
+                                0x1d1 (size before relaxing)
+ .debug_str     0x000004ff       0x3c HAL/LED_Driver/LED.o
+                                0x1d1 (size before relaxing)
+ .debug_str     0x0000053b       0x11 main.o
+                                0x185 (size before relaxing)
+ .debug_str     0x0000054c       0x38 MCAL/DIO_Driver/DIO.o
+                                0x1ce (size before relaxing)
+ .debug_str     0x00000584       0x25 MCAL/Interrupt_Driver/Interrupt.o
+                                0x1a4 (size before relaxing)
+ .debug_str     0x000005a9       0x5a MCAL/Timer_Driver/Timer.o
+                                0x1f0 (size before relaxing)
 
 .debug_loc      0x00000000      0x85b
  *(.debug_loc)

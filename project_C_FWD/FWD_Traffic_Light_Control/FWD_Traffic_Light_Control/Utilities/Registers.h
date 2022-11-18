@@ -144,10 +144,7 @@
 #define LED_yellow	1
 #define LED_red		2
 
-#define phase_1 0
-#define phase_2 1
-#define phase_3 2
-#define phase_4 3
+
 
 #define Button_1_Portd	PORT_D
 #define Button_1_PIN2	PIN0
